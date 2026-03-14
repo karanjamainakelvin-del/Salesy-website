@@ -1,0 +1,18 @@
+salesy-ads-agency/
+├── src/
+│   ├── app/                # Next.js App Router (Pages & API)
+│   │   ├── api/            # Backend API Routes (Auth, Leads, Booking)
+│   │   ├── services/       # Services Page
+│   │   ├── case-studies/   # Portfolio
+│   │   └── layout.tsx      # Global Layout & Providers
+│   ├── components/         # Reusable UI Components
+│   │   ├── ui/             # Atomic components (Buttons, Inputs)
+│   │   ├── marketing/      # Sections (Hero, Features, Testimonials)
+│   │   └── forms/          # Lead Capture & Booking
+│   ├── lib/                # Shared utilities (Prisma, JWT, Validation)
+│   ├── hooks/              # Custom React hooks
+│   └── styles/             # Global CSS & Tailwind Config
+├── prisma/                 # Database Schema (PostgreSQL)
+├── public/                 # Assets (Logo, Icons)
+├── .env.example            # Environment Variables
+└── tailwind.config.ts      # Branding & Color Palette
