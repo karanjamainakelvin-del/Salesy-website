@@ -1,0 +1,9 @@
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/salesy_ads"
+
+# Auth
+NEXTAUTH_SECRET="your-super-secret-key"
+
+# Integrations
+RESEND_API_KEY="re_..." # For Lead notification emails
+WHATSAPP_PHONE_NUMBER="2547XXXXXXXX"
