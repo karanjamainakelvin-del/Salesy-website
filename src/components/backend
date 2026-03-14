@@ -1,0 +1,25 @@
+// src/app/api/leads/route.ts
+import { NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import { leadSchema } from '@/lib/validations'; // Using Zod for validation
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    
+    // 1. Validate Input
+    const validatedData = leadSchema.parse(body);
+
+    // 2. Save to DB
+    const lead = await prisma.lead.create({
+      data: validatedData,
+    });
+
+    // 3. Optional: Trigger WhatsApp/Email Notification
+    // await sendWhatsAppNotification(lead);
+
+    return NextResponse.json({ success: true, id: lead.id }, { status: 201 });
+  } catch (error) {
+    return NextResponse.json({ error: "Invalid data" }, { status: 400 });
+  }
+}
